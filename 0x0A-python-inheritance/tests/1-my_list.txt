@@ -1,0 +1,33 @@
+The ``print_sorted`` module
+=============================
+
+Using print_sorted
+-----------------
+
+These are test cases for the print_sorted function and MyList class.
+The class ``MyList`` inherits from ``list``.
+The function prints the list, but sorted (ascending sort)
+
+Importing the class;
+    >>> MyList = __import__('1-my_list').MyList
+
+Creating instance;
+    >>> my_list = MyList()
+
+== EXPECTED INPUTS ==
+
+Test case: Integer input
+
+    >>> my_list.append(1)
+    >>> my_list.append(4)
+    >>> my_list.append(2)
+    >>> print(my_list)
+    [1, 4, 2]
+
+    >>> my_list.print_sorted()
+    [1, 2, 4]
+
+The original list is unaltered.
+    >>> print(my_list)
+    [1, 4, 2]
+
