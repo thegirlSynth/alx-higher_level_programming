@@ -16,7 +16,7 @@ Creating instance;
 
 == EXPECTED INPUTS ==
 
-Test case: Integer input
+Test case: Positive integer input
 
     >>> my_list.append(1)
     >>> my_list.append(4)
@@ -31,3 +31,16 @@ The original list is unaltered.
     >>> print(my_list)
     [1, 4, 2]
 
+Test case: Negative integer input
+
+    >>> my_list.append(-2)
+    >>> print(my_list)
+    [1, 4, 2, -2]
+
+    >>> my_list.print_sorted()
+    [-2, 1, 2, 4]
+
+Test case: Empty list
+    >>> empty_list = MyList()
+    >>> empty_list.print_sorted()
+    []
