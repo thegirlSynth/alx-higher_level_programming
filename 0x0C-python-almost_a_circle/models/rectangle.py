@@ -100,7 +100,7 @@ class Rectangle(Base):
                 if key == 1:
                     self.width = value
                 if key == 2:
-                    self.heigth = value
+                    self.height = value
                 if key == 3:
                     self.x = value
                 if key == 4:
