@@ -89,3 +89,19 @@ class Rectangle(Base):
         first_part = ' ({}) {}/{}'.format(self.id, self.__x, self.__y)
         second_part = ' - {}/{}'.format(self.__width, self.__height)
         return '[Rectangle]' + first_part + second_part
+
+    def update(self, *args):
+        """Updates the class attributes"""
+
+        if len(args):
+            for key, value in enumerate(args):
+                if key == 0:
+                    self.id = value
+                if key == 1:
+                    self.width = value
+                if key == 2:
+                    self.heigth = value
+                if key == 3:
+                    self.x = value
+                if key == 4:
+                    self.y = value
