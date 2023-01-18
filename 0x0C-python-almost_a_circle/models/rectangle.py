@@ -90,7 +90,7 @@ class Rectangle(Base):
         second_part = ' - {}/{}'.format(self.__width, self.__height)
         return '[Rectangle]' + first_part + second_part
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """Updates the class attributes"""
 
         if len(args):
@@ -104,4 +104,17 @@ class Rectangle(Base):
                 if key == 3:
                     self.x = value
                 if key == 4:
+                    self.y = value
+
+        else:
+            for key, value in kwargs.items():
+                if key == "id":
+                    self.id = value
+                if key == "width":
+                    self.width = value
+                if key == "height":
+                    self.height = value
+                if key == "x":
+                    self.x = value
+                if key == "y":
                     self.y = value
