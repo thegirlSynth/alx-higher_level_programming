@@ -24,6 +24,33 @@ class Square(Rectangle):
         self.width = value
         self.height = value
 
+    def update(self, *args, **kwargs):
+        """Updates the class attributes"""
+
+        if len(args):
+            for key, value in enumerate(args):
+                if key == 0:
+                    self.id = value
+                if key == 1:
+                    self.width = value
+                    self.height = value
+                if key == 2:
+                    self.x = value
+                if key == 3:
+                    self.y = value
+
+        else:
+            for key, value in kwargs.items():
+                if key == "id":
+                    self.id = value
+                if key == "size":
+                    self.width = value
+                    self.height = value
+                if key == "x":
+                    self.x = value
+                if key == "y":
+                    self.y = value
+
     def __str__(self):
         """Overriding string method for Square class"""
         first_part = ' ({}) {}/{}'.format(self.id, self.x, self.y)
