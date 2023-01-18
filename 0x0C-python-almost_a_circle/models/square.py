@@ -9,6 +9,21 @@ class Square(Rectangle):
         """Initializes the `Square` class"""
         super().__init__(size, size, x, y, id)
 
+    @property
+    def size(self):
+        """returns the value of the square size"""
+        return self.width
+
+    @size.setter
+    def size(self, value):
+        """sets the value for square size"""
+        if type(value) is not int:
+            raise TypeError('width must be an integer')
+        if value <= 0:
+            raise ValueError('width must be > 0')
+        self.width = value
+        self.height = value
+
     def __str__(self):
         """Overriding string method for Square class"""
         first_part = ' ({}) {}/{}'.format(self.id, self.x, self.y)
