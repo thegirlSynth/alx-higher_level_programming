@@ -56,3 +56,7 @@ class Square(Rectangle):
         first_part = ' ({}) {}/{}'.format(self.id, self.x, self.y)
         second_part = ' - {}'.format(self.width)
         return '[Square]' + first_part + second_part
+
+    def to_dictionary(self):
+        """Returns the dictionary representation of a Square"""
+        return dict(id=self.id, size=self.size, x=self.x, y=self.y)
