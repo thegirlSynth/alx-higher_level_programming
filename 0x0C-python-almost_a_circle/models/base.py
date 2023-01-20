@@ -26,7 +26,7 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """Writes the JSON string representation of list_objs to a file
+        """W9rites the JSON string representation of list_objs to a file
         """
         with open("{}.json".format(cls.__name__), "w") as newfile:
             if list_objs:
@@ -53,3 +53,14 @@ class Base:
             dummy = cls(1)
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """Returns a list of instances"""
+        try:
+            with open("{}.json".format(cls.__name__), "r") as readfile:
+                read_data = readfile.read()
+                dictnlist = cls.from_json_string(read_data)
+                return [cls.create(**dictn) for dictn in dictnlist]
+        except IOError:
+            return []
