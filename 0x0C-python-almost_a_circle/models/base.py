@@ -86,13 +86,13 @@ class Base:
     def load_from_file_csv(cls):
         """Returns a list of instances from the csv file"""
         try:
-            with open("{}.csv".format(cls.__name__), "r", newline="") as readfile:
+            with open("{}.csv".format(cls.__name__), "r", newline="") as dfile:
                 if cls.__name__ == 'Rectangle':
                     fieldnames = ['id', 'width', 'height', 'x', 'y']
                 else:
                     fieldnames = ['id', 'size', 'x', 'y']
-                rd = csv.DictReader(readfile, fieldnames=fieldnames)
-                dictnlist = [dict([k, int(v)] for k, v in row.items()) for row in rd]
-                return [cls.create(**dictn) for dictn in dictnlist]
+                rd = csv.DictReader(dfile, fieldnames=fieldnames)
+                diclist = [dict([k, int(v)] for k, v in r.items()) for r in rd]
+                return [cls.create(**dictn) for dictn in diclist]
         except IOError:
             return []
