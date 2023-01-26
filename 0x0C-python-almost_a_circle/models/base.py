@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """This module contains a class ``Base``"""
 import json
+import csv
 
 
 class Base:
@@ -26,7 +27,7 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """W9rites the JSON string representation of list_objs to a file
+        """Writes the JSON string representation of list_objs to a file
         """
         with open("{}.json".format(cls.__name__), "w") as newfile:
             if list_objs:
@@ -61,6 +62,37 @@ class Base:
             with open("{}.json".format(cls.__name__), "r") as readfile:
                 read_data = readfile.read()
                 dictnlist = cls.from_json_string(read_data)
+                return [cls.create(**dictn) for dictn in dictnlist]
+        except IOError:
+            return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Writes the JSON string representation of list_objs to a csv file
+        """
+        with open("{}.csv".format(cls.__name__), "w", newline="") as newfile:
+            if list_objs:
+                if cls.__name__ == 'Rectangle':
+                    fieldnames = ['id', 'width', 'height', 'x', 'y']
+                else:
+                    fieldnames = ['id', 'size', 'x', 'y']
+                writefile = csv.DictWriter(newfile, fieldnames=fieldnames)
+                for obj in list_objs:
+                    writefile.writerow(obj.to_dictionary())
+            else:
+                newfile.write("[]")
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Returns a list of instances from the csv file"""
+        try:
+            with open("{}.csv".format(cls.__name__), "r", newline="") as readfile:
+                if cls.__name__ == 'Rectangle':
+                    fieldnames = ['id', 'width', 'height', 'x', 'y']
+                else:
+                    fieldnames = ['id', 'size', 'x', 'y']
+                rd = csv.DictReader(readfile, fieldnames=fieldnames)
+                dictnlist = [dict([k, int(v)] for k, v in row.items()) for row in rd]
                 return [cls.create(**dictn) for dictn in dictnlist]
         except IOError:
             return []
