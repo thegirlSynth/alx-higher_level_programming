@@ -29,7 +29,7 @@ class Square:
     def my_print(self):
         """Prints a representation of the square using `#`"""
         if self.__size != 0:
-            for rows in range (0, self.__size):
+            for rows in range(0, self.__size):
                 print('#' * self.__size)
         else:
             print()
