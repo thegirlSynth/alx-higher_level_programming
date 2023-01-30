@@ -7,7 +7,7 @@ import math
 class MagicClass:
     """This is a magic geometry class"""
 
-    def __init__(self, radius):
+    def __init__(self, radius=0):
         """This method initiates the instance attributes"""
         self.__radius = 0
 
