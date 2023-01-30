@@ -11,7 +11,7 @@ class MagicClass:
         """This method initiates the instance attributes"""
         self.__radius = 0
 
-        if type(radius) is not int or type(radius) is not float:
+        if type(radius) is not int and type(radius) is not float:
             raise TypeError("radius must be a number")
         self.__radius = radius
 
@@ -22,7 +22,3 @@ class MagicClass:
     def circumference(self):
         """Returns the circumference of the MagicClass"""
         return 2 * math.pi * self.__radius
-
-
-if __name__ == "__main__":
-    dis.dis(MagicClass)
