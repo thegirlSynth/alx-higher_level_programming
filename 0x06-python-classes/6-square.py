@@ -32,8 +32,9 @@ class Square:
     def position(self, value):
         """Validates the value to be assigned to position"""
         errMsg = "position must be a tuple of 2 positive integers"
-        if not isinstance(value, tuple):
-            raise TypeError("".format(errMsg))
+        if not isinstance(value, tuple) or len(value) != 2:
+            raise TypeError("position must be a tuple of 2 positive integers")
+
         if not isinstance(value[0], int) or not isinstance(value[1], int):
             raise TypeError("".format(errMsg))
         if value[0] < 0 or value[1] < 0:
@@ -46,9 +47,8 @@ class Square:
 
     def my_print(self):
         """Prints a representation of the square using `#`"""
-        print("\n" * self.__position[1], end="")
-
         if self.__size != 0:
+            print("\n" * self.__position[1], end="")
             for rows in range(0, self.__size):
                 print(" " * self.__position[0], end="")
                 print('#' * self.__size)
