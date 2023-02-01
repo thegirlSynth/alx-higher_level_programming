@@ -63,6 +63,4 @@ class Square:
                 print('#' * self.__size, end="")
                 if rows != self.__size - 1:
                     print()
-        else:
-            print()
         return ""
