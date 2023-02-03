@@ -77,7 +77,7 @@ class SinglyLinkedList:
 
         while print_head is not None:
             if count != 1:
-                print("\n", end="")
+                print()
             print("{}".format(print_head.data), end="")
             print_head = print_head.next_node
             count += 1
