@@ -38,11 +38,11 @@ class Node:
 class SinglyLinkedList:
     """This class defines a singly linked list"""
     def __init__(self):
-        """Comments"""
+        """Initializes a singly linked list."""
         self.__head = None
 
     def sorted_insert(self, value):
-        """Comments"""
+        """Inserts nodes into the singly linked list in a sorted order."""
         new_node = Node(value, None)
 
         if self.__head is None:
@@ -77,7 +77,7 @@ class SinglyLinkedList:
 
         while print_head is not None:
             if count != 1:
-                print("\n", end="")
+                print()
             print("{}".format(print_head.data), end="")
             print_head = print_head.next_node
             count += 1
