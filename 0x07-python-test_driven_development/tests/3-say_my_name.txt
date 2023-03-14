@@ -1,0 +1,41 @@
+The `say_my_name` function
+===========================
+Prints "My name is <first name> <last name>"
+
+=> first_name and last_name must be strings otherwise, a TypeError exception
+   with the message "first_name must be a string" or
+   "last_name must be a string" is raised.
+
+Importing the function;
+	>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+CASE 1: first_name and last_name are strings
+--------------------------------------------
+	>>> say_my_name("Cynthia", "Uche")
+	My name is Cynthia Uche
+
+CASE 2: first_name is not string
+------------------------------------
+	>>> say_my_name(['Cynthia'], "Uche")
+	Traceback (most recent call last):
+	...
+	TypeError: first_name must be a string
+
+CASE 3: last_name is not string
+------------------------------------
+	>>> say_my_name("Cynthia", ['Cynthia'])
+	Traceback (most recent call last):
+	...
+	TypeError: last_name must be a string
+
+CASE 4: no argument
+------------------------------------
+	>>> say_my_name()
+	Traceback (most recent call last):
+	...
+	TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+CASE 5: no last_name
+------------------------------------
+	>>> say_my_name("Cynthia")
+	My name is Cynthia 
