@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """This module contains a function `print_square`"""
 
+
 def print_square(size):
     """This function prints a square with the character `#`"""
     if not isinstance(size, int):
