@@ -1,0 +1,35 @@
+The ``add_integer`` module
+=======================
+Execute the tests in this file on the command line using:
+``python3 -m doctest ./tests/0-add_integer.txt -v``
+
+Using ``add_integer``
+-------------------
+Importing the function:
+
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+Now using it:
+
+Testcases:
+1. Both variables a(int) and b(int) are given.
+    >>> add_integer(2, 4)
+    6
+
+2. Both variables a(float) and b(float) are given.
+    >>> add_integer(2.0, 3.0)
+    5
+
+3. Variable a(float) and b(int)
+    >>> add_integer(7.0, 2)
+    9
+
+4. Variable a(int) and b(float)
+    >>> add_integer(11, 2.7)
+    13
+
+5. Only a(int) is given.
+    >>> add_integer(2)
+    100
+
+
