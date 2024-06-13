@@ -32,4 +32,34 @@ Testcases:
     >>> add_integer(2)
     100
 
+6. Only a(float) is given
+    >>> add_integer(3.4)
+    101
 
+7. a is not given
+    >>> add_integer()
+    Traceback (most recent call last):
+    ...
+    TypeError: add_integer() missing 1 required positional argument: 'a'
+
+8. Either variable is a string
+    >>> add_integer("beehive")
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+    >>> add_integer(3, "bumble")
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
+
+9. Either variable is a list
+    >>> add_integer([1, 2, 3])
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+    >>> add_integer(3, [5, 7, 8])
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
