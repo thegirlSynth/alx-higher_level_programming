@@ -63,3 +63,36 @@ Testcases:
     Traceback (most recent call last):
     ...
     TypeError: b must be an integer
+
+10. Either variable is a Dict
+    >>> add_integer({3:"value"})
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+    >>> add_integer(5.8, {"key":"value"})
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
+
+11. Either variable is Bool
+    >>> add_integer(True)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+    >>> add_integer(3, False)
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
+
+12. Either variable is None
+    >>> add_integer(None)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+    >>> add_integer(3, None)
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
